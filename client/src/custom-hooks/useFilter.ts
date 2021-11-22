@@ -22,9 +22,9 @@ export const useFilter = (): Country[] => {
     if (!filterLanguage.length) {
       setFilterCountryList(countriesByPopulation);
     } else {
-      const filteredCountry = countriesByPopulation.filter(({ languages }) =>
-        _.some(languages, { name: filterLanguage })
-      );
+      const filteredCountry = countriesByPopulation.filter(({ languages }) => {
+        return languages && Object.values(languages)[0] === filterLanguage;
+      });
       setFilterCountryList(filteredCountry);
     }
   };
