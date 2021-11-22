@@ -5,7 +5,7 @@
   <p align="center">
     Country App
     <br />
-    <a href="https://country-app-411.netlify.app/">View Demo(To be available soon)</a>
+    <a href="https://country-app-411.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/jimmytran411/Country-app/issues">Report Bug</a>
     ·
