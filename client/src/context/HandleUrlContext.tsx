@@ -100,7 +100,6 @@ const HandleUrlProvider: React.FC = (props: any) => {
 
     const qsstring = qs.stringify(isFilterChange ? { ...filterInput, ...pagination } : pagination);
 
-    !isFilterChange && history.push('/');
     (isFilterChange || isPaginationChange) && history.push(`/?${qsstring}`);
   }, [history, paramsFromUrl]);
 
