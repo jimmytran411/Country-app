@@ -47,7 +47,11 @@ export const Header: React.FC = () => {
   };
 
   useEffect(() => {
-    setCount(favoriteCountries ? favoriteCountries.length : 0);
+    if (favoriteCountries[0] === '' || !favoriteCountries.length) {
+      setCount(0);
+    } else {
+      setCount(favoriteCountries.length);
+    }
   }, [favoriteCountries]);
 
   useEffect(() => {

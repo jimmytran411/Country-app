@@ -60,7 +60,7 @@ export const FavoriteCountries: React.FC<FavoriteCountriesProps> = ({ onClose, o
   return (
     <Modal open={open} onClose={onClose}>
       <div className={paper}>
-        {!favoriteCountries.length &&
+        {(!favoriteCountries.length || favoriteCountries[0] === '') &&
           `Nothing to show here. Try to add a country to your favorite, for example, where you were born`}
         {countries
           .filter(({ name }) => favoriteCountries.some((country) => country === name))
