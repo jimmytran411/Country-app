@@ -11,9 +11,12 @@ export type Country = {
   subregion: string;
   borders: string[];
   currencies: {
-    name: string;
-  }[];
-  alpha3Code: string;
+    [key: string]: {
+      name: string;
+      symbol: string;
+    };
+  };
+  fifa: string;
 };
 
 type ActionObject<T> = {

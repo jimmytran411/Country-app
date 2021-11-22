@@ -21,10 +21,10 @@ const useStyles = makeStyles((theme) => ({
 export type ExpandableContentProps = {
   contentTitle: string;
   content?: string;
-  Component?: React.ComponentType<any>;
+  children?: any;
 };
 
-export const ExpandableContent: React.FC<ExpandableContentProps> = ({ contentTitle, content, Component }) => {
+export const ExpandableContent: React.FC<ExpandableContentProps> = ({ contentTitle, content, children }) => {
   const [expanded, setExpanded] = useState(false);
 
   const { expand, expandOpen, title } = useStyles();
@@ -47,7 +47,7 @@ export const ExpandableContent: React.FC<ExpandableContentProps> = ({ contentTit
         </Grid>
         <Grid item xs>
           {expanded && content}
-          {expanded && Component && <Component />}
+          {expanded && children}
         </Grid>
       </Grid>
     </CardContent>

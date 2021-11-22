@@ -9,13 +9,13 @@ import { CountryAction } from './countryAction';
 
 export type CountryReducer = {
   countries: Country[];
-  country: Country[];
+  country: Country | undefined;
   favoriteCountries: string[];
 };
 
 export const countryReducerInitialState: CountryReducer = {
   countries: [],
-  country: [],
+  country: undefined,
   favoriteCountries: [],
 };
 

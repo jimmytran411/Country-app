@@ -31,7 +31,7 @@ export const getCountryByName = (countryName: string): ActionReturn<typeof SAGA_
   };
 };
 
-export const fetchCountrySucess = (data: Country[]): ActionReturn<typeof FETCH_COUNTRY_SUCCESS, Country[]> => {
+export const fetchCountrySucess = (data: Country): ActionReturn<typeof FETCH_COUNTRY_SUCCESS, Country> => {
   return {
     type: FETCH_COUNTRY_SUCCESS,
     payload: data,

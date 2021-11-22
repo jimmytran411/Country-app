@@ -25,7 +25,7 @@ export const createSaga = (actionType, fetchFunction, fetchSuccessAction) => {
 export function* sagaGetAllCountries() {
   yield takeLatest(SAGA_GET_ALL_COUNTRIES, function* () {
     const { data } = yield call(fetchAllCountries);
-    const countries = data.map(({ name, ...country }: any) => ({ name: name.common, ...country }));
+    const countries = data.map(({ name, ...country }: any) => ({ ...country, name: name.common }));
     yield put(fetchCountriesSuccess(countries));
   });
 }
@@ -34,7 +34,7 @@ export function* sagaGetCountryByName() {
   yield takeLatest(SAGA_GET_COUNTRY_BY_NAME, function* (action) {
     const countryName = action.payload;
     const { data } = yield call(fetchCountryByName, countryName);
-    const country = { ...data, name: data.name.common };
+    const country = { ...data[0], name: data[0].name.common };
     yield put(fetchCountrySucess(country));
   });
 }

@@ -64,7 +64,11 @@ export const Header: React.FC = () => {
       </Grid>
       <Grid item xs={7}>
         {!pathname.includes('/country') && <SearchField />}
-        {!pathname.includes('/country') && <ExpandableContent contentTitle={'Filter'} Component={FilterForm} />}
+        {!pathname.includes('/country') && (
+          <ExpandableContent contentTitle={'Filter'}>
+            <FilterForm />
+          </ExpandableContent>
+        )}
       </Grid>
       <Grid item xs={2}>
         <Button className={button} onClick={handleOpen}>
